@@ -1,0 +1,5 @@
+rootProject.name = 'challenge-scraper'
+include 'scraper-core'
+include 'scraper-api'
+include 'scrapper-app'
+

@@ -1,0 +1,2 @@
+meta/com/br/challenge/app/ScraperAppMain.java
+ meta.com.br.challenge.app.ScraperAppMain
