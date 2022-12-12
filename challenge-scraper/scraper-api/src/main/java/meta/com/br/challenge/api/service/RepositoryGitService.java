@@ -17,6 +17,7 @@ public class RepositoryGitService {
         this.repository = repository;
     }
 
+    //Retorna o resumo analítico do repositório
     public String getAnalytics(String repository) {
         gitScraper.scrape_engine("", repository);
         String response = new GitFilesToJson().getObjectAsJson(gitScraper.getGitFiles());

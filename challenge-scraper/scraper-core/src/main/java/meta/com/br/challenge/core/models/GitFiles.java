@@ -22,6 +22,7 @@ public class GitFiles {
 
     public void sortNameAscending() { gitFiles.sort(new NameComparator()); }
 
+    //Ordena os arquivos por tipo de extensão
     public void sortExtensionAscending() { gitFiles.sort(new ExtensionComparator()); }
 
     public int countFiles() { return gitFiles.size(); }
