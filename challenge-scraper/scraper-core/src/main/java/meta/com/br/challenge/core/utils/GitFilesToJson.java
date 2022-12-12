@@ -11,38 +11,49 @@ public class GitFilesToJson {
     private int totalFiles = 0;
     private int totalLines = 0;
 
+    private ArrayList<GitFilePojo> gitFilesGrouped;
+
+    public GitFilesToJson() {
+        this.gitFilesGrouped = new ArrayList<>();
+    }
+
     public String getObjectAsJson(GitFiles gitFiles) {
         Gson gson = new Gson();
         return gson.toJson(sortAndGroup(gitFiles));
     }
 
+    //Retorna os dados dos arquivos, de modo ordenado e agrupagdo
     public ArrayList<GitFilePojo> sortAndGroup(GitFiles gitFiles) {
+        //Ordena lista de arquivos
         gitFiles.sortExtensionAscending();
 
-        ArrayList<GitFilePojo> gitFilesGrouped = new ArrayList<>();
-
-        String prevExt = gitFiles.getByPosition(0).getExtension();
+        String prevExt = "";
 
         for (int i = 0; i < gitFiles.countFiles(); i++) {
+            //Atualiza contagem dos totalizadores
+            sumCount(gitFiles.getByPosition(i).getLines());
 
             if (!prevExt.equals(gitFiles.getByPosition(i).getExtension())) {
-                GitFilePojo gitFile = new GitFilePojo(prevExt, totalFiles, totalLines);
                 prevExt = gitFiles.getByPosition(i).getExtension();
+                GitFilePojo gitFile = new GitFilePojo(prevExt, totalFiles, totalLines);
 
-                startNewCount();
+                //Zera contagem
+                startCount();
 
-                gitFilesGrouped.add(gitFile);
-            } else {
-                totalFiles ++;
-                totalLines = totalLines + gitFiles.getByPosition(i).getLines();
+                this.gitFilesGrouped.add(gitFile);
             }
         }
 
-        return gitFilesGrouped;
+        return this.gitFilesGrouped;
     }
 
-    private void startNewCount() {
+    private void startCount() {
         totalFiles = 0;
         totalLines = 0;
+    }
+
+    private void sumCount(int lines) {
+        totalFiles ++;
+        totalLines = totalLines + lines;
     }
 }

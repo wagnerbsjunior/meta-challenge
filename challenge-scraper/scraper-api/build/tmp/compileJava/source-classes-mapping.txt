@@ -1,11 +1,11 @@
-meta/com/br/challenge/api/rest/RepositoryGitController.java
- meta.com.br.challenge.api.rest.RepositoryGitController
-meta/com/br/challenge/api/service/RepositoryGitService.java
- meta.com.br.challenge.api.service.RepositoryGitService
+meta/com/br/challenge/api/model/entity/RepoGitAnalytics.java
+ meta.com.br.challenge.api.model.entity.RepoGitAnalytics
+ meta.com.br.challenge.api.model.entity.RepoGitAnalytics$RepoGitAnalyticsBuilder
 meta/com/br/challenge/api/model/repository/RepoGitAnalyticsRepository.java
  meta.com.br.challenge.api.model.repository.RepoGitAnalyticsRepository
 meta/com/br/challenge/api/ScraperApiMain.java
  meta.com.br.challenge.api.ScraperApiMain
-meta/com/br/challenge/api/model/entity/RepoGitAnalytics.java
- meta.com.br.challenge.api.model.entity.RepoGitAnalytics
- meta.com.br.challenge.api.model.entity.RepoGitAnalytics$RepoGitAnalyticsBuilder
+meta/com/br/challenge/api/rest/RepositoryGitController.java
+ meta.com.br.challenge.api.rest.RepositoryGitController
+meta/com/br/challenge/api/service/RepositoryGitService.java
+ meta.com.br.challenge.api.service.RepositoryGitService

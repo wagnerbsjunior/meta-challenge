@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.*;
 
 public class GitScraper {
-    private static final String GIT_URL_PATTERN = "https://github.com/%s/\\d";
     private static final String DEFAULT_TREE_URL = "https://github.com/%s/";
 
     private Set<String> subGitUrls = new HashSet<>();
@@ -31,18 +30,18 @@ public class GitScraper {
 
     public static GitScraper getGitScraper() { return gitScraper; }
 
+    //Motor de varredura de dados em um determinado repositório
     public void scrape_engine(String url, String level) {
         try {
             gitFiles.clearAll();
-            Document doc = Jsoup.connect(String.format(DEFAULT_TREE_URL, level)).cookies(gitCookies).get();
+            Document doc = getGitDocument(String.format(DEFAULT_TREE_URL, level));
+
             Elements gitElements = doc.select(String.format("a[href*=%s][class*=' ']", level));
 
             for (Element element : gitElements.select(".js-navigation-open")) {
                 String curr_tag = element.attr("href");
 
-                if (curr_tag.matches(".*\\btree\\b.*")) {
-                    scrape_files(String.format(DEFAULT_TREE_URL, curr_tag), url);
-                }
+                scrape_files(String.format(DEFAULT_TREE_URL, curr_tag), url);
             }
 
         } catch (Exception e) {
@@ -117,7 +116,13 @@ public class GitScraper {
     }
 
     public Document getGitDocument(String gitUrl) throws IOException {
-        return Jsoup.connect(gitUrl).cookies(gitCookies).timeout(0).get();
+        return Jsoup.connect(gitUrl)
+                .header("Accept-Encoding", "gzip, deflate")
+                .ignoreContentType(true)
+                .userAgent("Mozilla")
+                .cookie("auth", "token")
+                .execute()
+                .parse();
     }
 
     private int scrapeLines(Document doc) {
