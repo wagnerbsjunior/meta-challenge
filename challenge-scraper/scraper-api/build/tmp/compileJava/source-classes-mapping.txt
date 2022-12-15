@@ -1,14 +1,14 @@
 meta/com/br/challenge/api/model/repository/RequestRepository.java
  meta.com.br.challenge.api.model.repository.RequestRepository
-meta/com/br/challenge/api/model/entity/File.java
- meta.com.br.challenge.api.model.entity.File
- meta.com.br.challenge.api.model.entity.File$FileBuilder
-meta/com/br/challenge/api/ScraperApiMain.java
- meta.com.br.challenge.api.ScraperApiMain
 meta/com/br/challenge/api/model/entity/Request.java
  meta.com.br.challenge.api.model.entity.Request
  meta.com.br.challenge.api.model.entity.Request$RequestBuilder
+meta/com/br/challenge/api/ScraperApiMain.java
+ meta.com.br.challenge.api.ScraperApiMain
 meta/com/br/challenge/api/service/RequestService.java
  meta.com.br.challenge.api.service.RequestService
 meta/com/br/challenge/api/rest/RepositoryGitController.java
  meta.com.br.challenge.api.rest.RepositoryGitController
+meta/com/br/challenge/api/model/entity/File.java
+ meta.com.br.challenge.api.model.entity.File
+ meta.com.br.challenge.api.model.entity.File$FileBuilder

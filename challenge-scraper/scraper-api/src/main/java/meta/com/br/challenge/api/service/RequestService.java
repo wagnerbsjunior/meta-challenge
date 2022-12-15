@@ -33,9 +33,9 @@ public class RequestService {
             gitScraper.clearFiles();
             request.getFiles().forEach(record -> {
                 GitFile file = new GitFile(
+                    record.getName(),
                     record.getExtension(),
-                    record.getExtension(),
-                    record.getExtension(),
+                    record.getTitle(),
                     record.getLines());
                 gitScraper.addGitFile(file);
             });
@@ -71,6 +71,8 @@ public class RequestService {
 
         gitFiles.getGitFilesList().forEach(file -> {
             File dataFile = new File();
+            dataFile.setName(file.getName());
+            dataFile.setTitle(file.getTitle());
             dataFile.setExtension(file.getExtension());
             dataFile.setLines(file.getLines());
             dataFile.setRequest(request);
