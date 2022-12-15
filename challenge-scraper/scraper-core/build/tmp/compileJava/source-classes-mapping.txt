@@ -1,16 +1,16 @@
-meta/com/br/challenge/core/pojo/GitFilePojo.java
- meta.com.br.challenge.core.pojo.GitFilePojo
+meta/com/br/challenge/core/utils/GitFilesToJson.java
+ meta.com.br.challenge.core.utils.GitFilesToJson
 meta/com/br/challenge/core/comparators/ExtensionComparator.java
  meta.com.br.challenge.core.comparators.ExtensionComparator
-meta/com/br/challenge/core/models/FileObject.java
- meta.com.br.challenge.core.models.FileObject
+meta/com/br/challenge/core/scrapers/GitScraper.java
+ meta.com.br.challenge.core.scrapers.GitScraper
 meta/com/br/challenge/core/comparators/NameComparator.java
  meta.com.br.challenge.core.comparators.NameComparator
 meta/com/br/challenge/core/models/GitFile.java
  meta.com.br.challenge.core.models.GitFile
+meta/com/br/challenge/core/models/FileObject.java
+ meta.com.br.challenge.core.models.FileObject
+meta/com/br/challenge/core/pojo/GitFilePojo.java
+ meta.com.br.challenge.core.pojo.GitFilePojo
 meta/com/br/challenge/core/models/GitFiles.java
  meta.com.br.challenge.core.models.GitFiles
-meta/com/br/challenge/core/utils/GitFilesToJson.java
- meta.com.br.challenge.core.utils.GitFilesToJson
-meta/com/br/challenge/core/scrapers/GitScraper.java
- meta.com.br.challenge.core.scrapers.GitScraper

@@ -17,6 +17,8 @@ public class File {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dataId;
+    private String title;
+    private String name;
     private String extension;
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int count;

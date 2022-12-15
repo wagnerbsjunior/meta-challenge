@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.7.6'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
 group 'meta.com.br.scraper.core'
@@ -14,6 +16,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'org.jsoup:jsoup:1.15.3'
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
