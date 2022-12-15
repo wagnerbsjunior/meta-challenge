@@ -1,19 +1,21 @@
 package meta.com.br.challenge.api.rest;
 
-import meta.com.br.challenge.api.service.RepositoryGitService;
+import meta.com.br.challenge.api.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/scraper")
-@CrossOrigin("http://localhost:4200")
 public class RepositoryGitController {
 
-    private final RepositoryGitService service;
+    private final RequestService service;
 
     @Autowired
-    public RepositoryGitController(RepositoryGitService service) {
+    public RepositoryGitController(RequestService service) {
         this.service = service;
     }
 
