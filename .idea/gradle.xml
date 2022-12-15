@@ -9,6 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/challenge-scraper" />
+            <option value="$PROJECT_DIR$/challenge-scraper/scraper-api" />
+            <option value="$PROJECT_DIR$/challenge-scraper/scraper-core" />
+            <option value="$PROJECT_DIR$/challenge-scraper/scrapper-app" />
           </set>
         </option>
       </GradleProjectSettings>
