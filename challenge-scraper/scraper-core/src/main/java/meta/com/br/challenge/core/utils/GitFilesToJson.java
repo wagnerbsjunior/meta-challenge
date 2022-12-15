@@ -22,6 +22,11 @@ public class GitFilesToJson {
         return gson.toJson(sortAndGroup(gitFiles));
     }
 
+    /*public String getObjectAsJson(List<Object> list) {
+        Gson gson = new Gson();
+        return gson.toJson(list);
+    }*/
+
     //Retorna os dados dos arquivos, de modo ordenado e agrupagdo
     public ArrayList<GitFilePojo> sortAndGroup(GitFiles gitFiles) {
         //Ordena lista de arquivos

@@ -8,13 +8,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RepoGitAnalytics {
+public class Request {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +27,9 @@ public class RepoGitAnalytics {
 
     @Column
     private String repositorio;
+
+    @OneToMany(mappedBy = "request", cascade = CascadeType.ALL)
+    private List<File> files;
 
     @PrePersist
     public void prePersist() {

@@ -138,4 +138,12 @@ public class GitScraper {
     public GitFiles getGitFiles() {
         return gitFiles;
     }
+
+    public void addGitFile(GitFile file) {
+        gitFiles.addFile(file);
+    }
+
+    public void clearFiles() {
+        gitFiles.clearAll();
+    }
 }
