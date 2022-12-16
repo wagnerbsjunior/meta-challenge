@@ -51,10 +51,11 @@ public class GitScraper {
 
     public void scrape_files(String url, String urlPrev) {
         try {
-            for (Element element : getGitDocument(url).select(".js-navigation-open")) {
+            Elements elements = getGitDocument(url).select(".js-navigation-open");
+            for (Element element : elements) {
                     String curr_tag = element.attr("href");
 
-                    if (curr_tag.matches(".*\\btree\\b.*") && curr_tag.length() > urlPrev.length()) {
+                    if (curr_tag.matches(".*\\btree\\b.*") && this.checkValidElement(element)) {
                         scrape_files(String.format(DEFAULT_TREE_URL, curr_tag), url);
                     }
 
@@ -146,4 +147,10 @@ public class GitScraper {
     public void clearFiles() {
         gitFiles.clearAll();
     }
+
+    private Boolean checkValidElement(Element element) {
+        return !"".equals(element.attr("title")) &&
+                !element.attr("title").contains("Go to parent");
+    }
+
 }
